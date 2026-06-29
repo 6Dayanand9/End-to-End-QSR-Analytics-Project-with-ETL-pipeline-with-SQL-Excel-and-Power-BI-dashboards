@@ -1,185 +1,253 @@
-# 🚀 Enterprise Budget vs Actual Sales & Profitability Analytics Platform
+# Enterprise Budget vs Actual Sales & Profitability Analytics Platform
 
 <p align="center">
 
-![Power BI](https://img.shields.io/badge/PowerBI-Analytics-F2C811?logo=powerbi)
-![MySQL](https://img.shields.io/badge/MySQL-Database-blue?logo=mysql)
-![Excel](https://img.shields.io/badge/Excel-Validation-green?logo=microsoftexcel)
-![GitHub](https://img.shields.io/badge/GitHub-Budget_Data-black?logo=github)
-![Rows](https://img.shields.io/badge/Rows-500K+-orange)
-![SKUs](https://img.shields.io/badge/SKUs-4000+-red)
-![Years](https://img.shields.io/badge/History-5_Years-blue)
-![KPIs](https://img.shields.io/badge/Business_Questions-38-success)
+<img src="https://img.shields.io/badge/Power_BI-Analytics-F2C811?style=for-the-badge&logo=powerbi"/>
+<img src="https://img.shields.io/badge/MySQL-Database-blue?style=for-the-badge&logo=mysql"/>
+<img src="https://img.shields.io/badge/Excel-Validation-green?style=for-the-badge&logo=microsoftexcel"/>
+<img src="https://img.shields.io/badge/GitHub-Budget_Data-black?style=for-the-badge&logo=github"/>
+<img src="https://img.shields.io/badge/Rows-500K+-orange?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/SKUs-4000+-red?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Business_Questions-38-success?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Years-5-blue?style=for-the-badge"/>
 
 </p>
 
 ---
 
-# 📖 Project Overview
+# 📌 Project Overview
 
-Modern organizations often struggle with disconnected Actual and Budget data sources, manual reporting, inconsistent KPIs, and delayed decision-making.
+Organizations often struggle with disconnected Actual and Budget data sources, manual reporting processes, inconsistent KPIs, and delayed business decisions.
 
-This project delivers an **enterprise-grade Budget vs Actual Analytics Platform** capable of analyzing:
+This project delivers an enterprise-grade **Budget vs Actual Analytics Platform** capable of analyzing:
 
-✅ 500K+ records
+✅ 500,000+ records
 ✅ 5 years of historical data
-✅ 4000+ products
-✅ Multiple locations, channels, and customer clusters
-✅ 38 business questions across finance and profitability domains
+✅ 4,000+ SKUs
+✅ Multiple locations and channels
+✅ 38 business questions
+✅ 4 major business problem statements
 
-The solution transforms raw business data into actionable financial intelligence.
-
----
-
-# 🎯 Business Objective
-
-Build a centralized analytics platform that enables stakeholders to:
-
-* Monitor Budget vs Actual performance
-* Identify revenue leakage
-* Understand profitability drivers
-* Detect cost leakage
-* Improve strategic decision making
+The solution transforms raw business data into actionable financial intelligence using Power BI, MySQL, Excel, and advanced DAX calculations.
 
 ---
 
-# ⚙️ Architecture Diagram
+# 🎯 Business Objectives
+
+* Monitor Budget vs Actual performance.
+* Identify revenue leakage opportunities.
+* Understand profitability drivers.
+* Detect cost leakage sources.
+* Improve strategic decision making.
+
+---
+
+# 🏗️ Solution Architecture
 
 ```text
-┌─────────────────────┐
-│  MySQL Actual Data  │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│ GitHub Budget Data  │
-└──────────┬──────────┘
-           │
-           ▼
-╔══════════════════════╗
-║ Power Query ETL Layer║
-║ • Cleaning           ║
-║ • Validation         ║
-║ • Standardization    ║
-║ • Reconciliation     ║
-╚══════════════════════╝
-           │
-           ▼
-╔══════════════════════╗
-║ Galaxy Schema Model  ║
-║ • Actual Fact Table  ║
-║ • Budget Fact Table  ║
-║ • Shared Dimensions  ║
-╚══════════════════════╝
-           │
-           ▼
-╔══════════════════════╗
-║ Advanced DAX Engine  ║
-║ • Variance Analysis  ║
-║ • EBITDA Analysis    ║
-║ • Ranking            ║
-║ • What-If Analysis   ║
-║ • PVM Analysis       ║
-╚══════════════════════╝
-           │
-           ▼
-┌─────────────────────┐
-│ Power BI Dashboard  │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│ Power BI Service    │
-│ Gateway + RLS       │
-└─────────────────────┘
+                               ┌────────────────────┐
+                               │  MySQL Actual Data │
+                               └─────────┬──────────┘
+                                         │
+                                         │
+                               ┌─────────▼──────────┐
+                               │ GitHub Budget Data │
+                               └─────────┬──────────┘
+                                         │
+                                         ▼
+                    ┌──────────────────────────────────┐
+                    │ Power Query ETL Layer            │
+                    │ • Cleaning                       │
+                    │ • Validation                     │
+                    │ • Standardization                │
+                    │ • Data Quality Checks            │
+                    └──────────────────────────────────┘
+                                         │
+                                         ▼
+                    ┌──────────────────────────────────┐
+                    │ Galaxy Schema Data Model         │
+                    │                                  │
+                    │ Fact Tables                      │
+                    │ • Actual Sales Fact             │
+                    │ • Budget Sales Fact             │
+                    │                                  │
+                    │ Dimension Tables                │
+                    │ • Date                          │
+                    │ • Product                       │
+                    │ • Location                      │
+                    │ • Channel                       │
+                    │ • Cluster                       │
+                    └──────────────────────────────────┘
+                                         │
+                                         ▼
+                    ┌──────────────────────────────────┐
+                    │ Advanced DAX Layer              │
+                    │ • Variance Analysis             │
+                    │ • Growth Analysis               │
+                    │ • EBITDA Analysis               │
+                    │ • Ranking                       │
+                    │ • Cost Analysis                 │
+                    │ • What-If Analysis              │
+                    │ • PVM Analysis                  │
+                    └──────────────────────────────────┘
+                                         │
+                                         ▼
+                    ┌──────────────────────────────────┐
+                    │ Power BI Dashboard              │
+                    └──────────────────────────────────┘
+                                         │
+                                         ▼
+                    ┌──────────────────────────────────┐
+                    │ Power BI Service                │
+                    │ • Gateway Refresh              │
+                    │ • Scheduled Refresh            │
+                    │ • Row Level Security           │
+                    └──────────────────────────────────┘
 ```
 
 ---
 
-# ⭐ Problem Statement 1
+# 📌 Problem Statement 1
 
 # Data Consolidation & Reporting Automation
 
-## Objective
+## Business Challenge
 
-Create a single source of truth for Actual and Budget reporting.
+The organization maintained Actual and Budget data in different systems which caused:
 
-### Business Problems Solved
+* Reporting delays
+* Manual reconciliation
+* Duplicate effort
+* Inconsistent KPIs
+* Data quality issues
 
-* Integrated MySQL Actual Sales and GitHub Budget datasets.
-* Eliminated manual Excel reconciliation.
-* Standardized and validated business data.
-* Designed a scalable Galaxy Schema model.
-* Automated reporting workflows.
-* Implemented centralized KPI calculations.
-* Enabled secure access using RLS.
+## Business Questions Solved
 
-### Business Impact
+1. How can Actual Sales and Budget data be consolidated?
+2. How can data from multiple sources be cleaned and standardized?
+3. How can duplicate records be removed?
+4. How can Galaxy Schema improve reporting performance?
+5. How can manual reporting be reduced?
+6. How can Actual and Budget be viewed together?
+7. How can data validation be performed?
+8. How can reporting delays be reduced?
 
+## Business Impact
+
+✅ Single source of truth
 ✅ Reduced manual reporting effort
-✅ Improved trust in business numbers
-✅ Faster reporting cycles
-✅ Enterprise-ready reporting model
+✅ Improved data quality
+✅ Faster reporting cycle
+✅ Better trust in numbers
 
 ---
 
-# 📈 Problem Statement 2
+# 📌 Problem Statement 2
 
 # Budget vs Actual Performance Analysis
 
 ## Objective
 
-Determine whether business performance aligns with financial expectations.
+Determine whether business performance aligns with financial targets.
 
-### Questions Answered
+## Questions Solved
 
-✔ Are actual sales meeting budget targets?
-✔ Which months overperformed or underperformed?
-✔ Which products caused budget shortfalls?
-✔ Which products exceeded expectations?
-✔ Which channels are underperforming?
-✔ Which locations are missing targets?
-✔ What is the variance percentage?
-✔ Is profit following the same trend as sales?
-
-### Business Impact
-
-📌 Improved forecasting accuracy
-📌 Faster variance identification
-📌 Better resource allocation
+9. Are actual sales meeting budget targets?
+10. Which months performed above or below budget?
+11. Which products created the largest shortfall?
+12. Which products exceeded expectations?
+13. Which channels underperformed?
+14. Which locations failed targets?
+15. What is the variance percentage?
+16. Is net profit following the same trend as budget achievement?
 
 ---
 
-# 💰 Problem Statement 3
+## 📊 Dashboard Pages
+
+### 📈 Page 1 — Executive Budget Performance Dashboard
+
+Features:
+
+* Revenue KPIs
+* Budget KPIs
+* Variance KPIs
+* Budget Achievement %
+* Monthly trends
+* Executive Summary
+
+![Page1](Images/Page-1.png)
+
+---
+
+### 📈 Page 2 — Variance Drilldown Analysis
+
+Features:
+
+* Product variance analysis
+* Channel variance analysis
+* Location variance analysis
+* Revenue leakage analysis
+* Top and Bottom performers
+
+![Page2](Images/Page-2.png)
+
+---
+
+# 📌 Problem Statement 3
 
 # Profitability Driver Analysis
 
 ## Objective
 
-Understand what truly drives profitability.
+Identify the products, channels, and locations generating profitability.
 
-### Questions Answered
+## Questions Solved
 
-✔ Highest net profit products
-✔ High sales but low profit products
-✔ Most profitable channels
-✔ Most profitable locations
-✔ Highest value customer clusters
-✔ Top EBITDA products
-✔ Volume vs profitability relationship
-✔ Investment prioritization opportunities
-✔ Weak product identification
-✔ Best product-channel-location combinations
-
-### Business Impact
-
-📌 Improved product strategy
-📌 Better investment decisions
-📌 Higher profitability focus
+17. Which products generate the highest net profit?
+18. Which products generate high sales but low profit?
+19. Which channels generate the highest margins?
+20. Which locations contribute the most profit?
+21. Which clusters contribute the highest revenue and profit?
+22. Which products deliver the highest EBITDA?
+23. Are high-volume products highly profitable?
+24. Which products deserve additional investment?
+25. Which products should be reviewed?
+26. Which product-channel-location combination performs best?
 
 ---
 
-# 📉 Problem Statement 4
+## 📊 Dashboard Pages
+
+### 📈 Page 3 — Profitability Analysis Dashboard
+
+Features:
+
+* Profitability ranking
+* Margin analysis
+* Cluster analysis
+* Location profitability
+* Channel profitability
+
+![Page3](Images/Page-3.png)
+
+---
+
+### 📈 Page 4 — Advanced Profitability Analytics Dashboard
+
+Features:
+
+* EBITDA Analysis
+* Gross Margin Analysis
+* High Volume vs High Profit Analysis
+* Investment Opportunity Analysis
+* Product Performance Matrix
+
+![Page4](Images/Page-4.png)
+
+---
+
+# 📌 Problem Statement 4
 
 # Cost Leakage Analysis
 
@@ -187,63 +255,37 @@ Understand what truly drives profitability.
 
 Identify controllable costs reducing profitability.
 
-### Questions Answered
+## Questions Solved
 
-✔ Largest profit leakage sources
-✔ Discount impact analysis
-✔ Highest discount products
-✔ Discount effectiveness measurement
-✔ Trade spend efficiency analysis
-✔ COGS trend analysis
-✔ Location cost burden analysis
-✔ Lowest gross margin products
-✔ EBITDA decline drivers
-✔ Cost optimization opportunities
-✔ Scenario analysis using What-If parameters
-
-### Business Impact
-
-📌 Improved pricing decisions
-📌 Better cost control
-📌 Trade spend optimization
-📌 Stronger profitability management
+27. Which cost component reduces profit the most?
+28. How much profit is lost due to discounts?
+29. Which products receive the highest discounts?
+30. Are discounts generating enough sales to justify profit loss?
+31. Which channels require excessive trade spend?
+32. Which products have the highest trade spend ratio?
+33. Is COGS increasing faster than revenue growth?
+34. Which locations have the highest cost burden?
+35. Which products have the lowest gross margins?
+36. What drives EBITDA decline?
+37. Which costs should be reduced first?
+38. What profit can be generated through cost reduction?
 
 ---
 
-# 🧠 Advanced Analytics Implemented
+## 📊 Dashboard Pages
 
-🔥 Variance Analysis
-🔥 EBITDA Analysis
-🔥 Profitability Ranking
-🔥 Revenue Leakage Analysis
-🔥 Cost Leakage Analysis
-🔥 Growth Analysis
-🔥 Dynamic Top N Analysis
-🔥 What-If Analysis
-🔥 Price Volume Mix Analysis
-🔥 Scenario Planning
+### 📈 Page 5 — Cost Leakage Dashboard
 
----
+Features:
 
-# 🏗 Data Model
+* Discount analysis
+* Trade spend analysis
+* COGS analysis
+* Cost burden analysis
+* EBITDA bridge analysis
+* What-if scenario analysis
 
-### Model Type
-
-**Galaxy Schema**
-
-### Fact Tables
-
-* Actual Sales Fact
-* Budget Sales Fact
-
-### Shared Dimensions
-
-* Date
-* Product
-* Customer
-* Channel
-* Location
-* Cluster
+![Page5](Images/Page-5.png)
 
 ---
 
@@ -251,43 +293,57 @@ Identify controllable costs reducing profitability.
 
 | Metric                    | Value                       |
 | ------------------------- | --------------------------- |
-| Total Records             | 500K+                       |
+| Total Records             | 500,000+                    |
 | Historical Data           | 5 Years                     |
-| Products                  | 4000+                       |
+| Products                  | 4,000+                      |
 | Business Questions Solved | 38                          |
 | Problem Statements        | 4                           |
 | Fact Tables               | 2                           |
+| Dashboard Pages           | 5                           |
 | Reporting Platforms       | 4                           |
 | Deployment                | Power BI Service            |
-| Security                  | Row Level Security          |
+| Security                  | RLS                         |
 | Refresh                   | Gateway + Scheduled Refresh |
 
 ---
 
-# 🛠 Technology Stack
+# 🚀 Advanced Analytics Implemented
 
-```text
-Power BI
-DAX
-MySQL
-Excel
-GitHub
-Power BI Service
-Gateway
-RLS
-Looker Studio
-Microsoft Fabric
-```
+* Budget vs Actual Analysis
+* Revenue Variance Analysis
+* Profitability Analysis
+* EBITDA Analysis
+* Discount Analysis
+* Trade Spend Analysis
+* Cost Leakage Analysis
+* Growth Analysis
+* Dynamic Ranking Analysis
+* What-If Analysis
+* Price Volume Mix Analysis (PVM)
 
 ---
 
-# 🎬 Demo Assets
+# 🛠️ Technology Stack
 
-📹 Architecture Walkthrough
-📹 Dashboard Demonstration
-📹 PPT Presentation Video
-📹 Business Insights Presentation
-📹 Executive Summary Video
+| Category      | Technology       |
+| ------------- | ---------------- |
+| Visualization | Power BI         |
+| Database      | MySQL            |
+| Validation    | Excel            |
+| Data Source   | GitHub           |
+| Modeling      | Galaxy Schema    |
+| Analytics     | DAX              |
+| Deployment    | Power BI Service |
+| Security      | RLS              |
+| Refresh       | Gateway          |
+
+---
+
+# 🎥 Demo Video
+
+## Project Demonstration
+
+[![Watch Demo](https://img.shields.io/badge/Watch-Demo_Video-red?style=for-the-badge\&logo=youtube)](YOUR_VIDEO_LINK_HERE)
 
 ---
 
@@ -295,10 +351,14 @@ Microsoft Fabric
 
 ## Dayanand Nimbalkar
 
+Microsoft Certified:
+
 🏅 PL-300 — Power BI Data Analyst Associate
 🏅 DP-600 — Fabric Analytics Engineer Associate
 🏅 DP-700 — Fabric Data Engineer Associate
 
 ---
 
-⭐ If you found this project useful, consider giving the repository a star.
+## ⭐ If you found this project useful, please consider giving it a star.
+
+⭐ Star the repository if you found it valuable for learning Budget vs Actual analytics and financial reporting.
