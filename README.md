@@ -1,4 +1,6 @@
 # 🚀 End-to-End QSR Analytics Project with ETL Pipeline using SQL, Excel and Power BI
+# Live Report Link 
+https://app.fabric.microsoft.com/view?r=eyJrIjoiZWQyZDZhZDktNmY5NS00NGJmLWE5MTItYzRkNzMzMWM1NDhiIiwidCI6IjYwNTMzNjRhLWFjY2YtNDM0ZC05YzRiLWJiOWE1OGZmODQ2OCJ9
 
 ## 📌 Project Overview
 
